@@ -1,0 +1,83 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    background: #f5f7fa;
+  
+    .login-form {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 320px;
+  
+      h2 {
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+  
+      .form-group {
+        margin-bottom: 1.2rem;
+  
+        label {
+          display: block;
+          font-weight: 500;
+          margin-bottom: 0.5rem;
+        }
+  
+        input {
+          width: 100%;
+          padding: 0.6rem;
+          border: 1px solid #ccc;
+          border-radius: 0.5rem;
+          outline: none;
+  
+          &:focus {
+            border-color: #007bff;
+          }
+        }
+  
+        small {
+          color: red;
+          font-size: 0.75rem;
+        }
+      }
+  
+      .error-msg {
+        margin-top: 1rem;
+        color: red;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+  
+      button {
+        width: 100%;
+        padding: 0.8rem;
+        background: #007bff;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+  
+        &:disabled {
+          background: #7da7dc;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+  
+  .register-link {
+    margin-top: 20px;
+    text-align: center;
+  
+    button {
+      background: transparent;
+      border: none;
+      color: #007bff;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }

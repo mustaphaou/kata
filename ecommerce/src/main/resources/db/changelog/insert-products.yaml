@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-products-001
+      author: yourname
+      changes:
+        - sql: |
+            INSERT INTO product (code, name, description, image, category, price, quantity, internal_reference, shell_id, inventory_status, rating, created_at, updated_at) VALUES
+            ('P001', 'iPhone 14', 'Latest iPhone with A15 Bionic chip', 'https://www.mediazone.ma/product/images/13375-hxsRj2Ai/apple-iphone-14-maroc.webp', 'Electronics', 999.99, 50, 'REF001', 1, 'INSTOCK', 4.8, 1716700000000, 1716700000000),
+            ('P002', 'Samsung Galaxy S23', 'High-end Android phone', 'https://www.mediazone.ma/product/images/14097-tKzCOy1U/samsung-galaxy-s23-256go-noir-maroc.webp', 'Electronics', 849.99, 40, 'REF002', 2, 'INSTOCK', 4.7, 1716700000000, 1716700000000),
+            ('P004', 'MacBook Air M2', 'Lightweight laptop with M2 chip', 'https://www.mediazone.ma/product/images/14517-h2Bh14lj/apple-macbook-air-15-puce-m2-8cpu-10gpu-8go-512go-lumiere-stellaire-maroc.webp', 'Computers', 1249.00, 30, 'REF004', 4, 'LOWSTOCK', 4.9, 1716700000000, 1716700000000),
+            ('P009', 'Apple Watch Series 8', 'Smartwatch with fitness tracking', 'https://www.mediazone.ma/product/images/14309-HaeZZMT3/apple-watch-series-8-boitier-acier-inoxydable-45-mm-gps-cellular-bracelet-milanais-or-maroc.webp', 'Wearables', 499.00, 70, 'REF009', 9, 'INSTOCK', 4.9, 1716700000000, 1716700000000),
+            ('P013', 'Microsoft Surface Pro 9', '2-in-1 detachable PC', 'https://www.mediazone.ma/product/images/13619-qu5u1NyJ/microsoft-surface-pro-9-i5-12eme-evo-8go-256go-ssd-bleu-saphir-maroc.webp', 'Computers', 1099.00, 25, 'REF013', 13, 'INSTOCK', 4.6, 1716700000000, 1716700000000),
+            ('P014', 'GoPro HERO11 Black', 'Action camera with stabilization', 'https://www.mediazone.ma/product/images/14277-A5wP1R3q/camera-gopro-hero10-black-2023-maroc.webp', 'Photography', 499.99, 40, 'REF014', 14, 'INSTOCK', 4.9, 1716700000000, 1716700000000),
+            ('P015', 'Razer DeathAdder V2', 'Ergonomic gaming mouse', 'https://www.mediazone.ma/product/images/12982-GP3RJdEE/souris-gaming-sans-file-razer-deathadder-v2-pro-noir-maroc.jpg', 'Gaming', 69.99, 80, 'REF015', 15, 'INSTOCK', 4.6, 1716700000000, 1716700000000);
+

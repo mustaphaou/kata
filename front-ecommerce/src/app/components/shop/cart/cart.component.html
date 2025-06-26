@@ -1,0 +1,40 @@
+<div class="container cart-container">
+  <div class="cart-left">
+    <h2>Panier ({{ cartItems.length }})</h2>
+
+    <div *ngFor="let item of cartItems" class="card mb-3 cart-card">
+      <div class="card-body d-flex cart-item">
+        <img [src]="item.product.image" alt="{{ item.product.name }}" class="item-image" />
+        <div class="item-details">
+          <h5 class="card-title">{{ item.product.name }}</h5>
+          <p class="card-text">{{ item.product.description }}</p>
+          <div class="item-price">
+            <strong>{{ item.product.price | currency:'MAD' }}</strong>
+          </div>
+          <div class="item-actions">
+            <button class="btn btn-sm btn-outline-secondary" (click)="decreaseQty(item)">-</button>
+            <span>{{ item.quantity }}</span>
+            <button class="btn btn-sm btn-outline-secondary" (click)="increaseQty(item)">+</button>
+            <button class="btn btn-sm btn-outline-danger" (click)="remove(item.id)">
+              Supprimer
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-summary">
+    <div class="card">
+      <div class="card-body">
+        <h5>Résumé</h5>
+        <p>Sous-total : {{ subtotal | currency:'MAD' }}</p>
+        <p>Livraison : {{ shipping | currency:'MAD' }}</p>
+        <p><strong>Total estimé : {{ subtotal + shipping | currency:'MAD' }}</strong></p>
+        <button class="btn btn-accent w-100 mt-3">
+          Payer ({{ cartItems.length }})
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

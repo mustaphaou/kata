@@ -1,0 +1,38 @@
+.menu {
+    background-color: #f8f8f8;
+    padding: 1rem;
+    border-right: 1px solid #ddd;
+    height: 100vh;
+    width: 200px;
+    position: fixed;
+  }
+  
+  .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu li {
+    margin-bottom: 1rem;
+  }
+  
+  .menu a, .menu button {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .menu a.active {
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  .logout-btn:hover {
+    color: red;
+  }
+  

@@ -1,0 +1,42 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: alten
+      changes:
+        - createTable:
+            tableName: cart_item
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: product_id
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: quantity
+                  type: INT
+                  constraints:
+                    nullable: true
+        - addForeignKeyConstraint:
+            baseTableName: cart_item
+            baseColumnNames: user_id
+            referencedTableName: users
+            referencedColumnNames: id
+            constraintName: fk_cart_user
+        - addForeignKeyConstraint:
+            baseTableName: cart_item
+            baseColumnNames: product_id
+            referencedTableName: product
+            referencedColumnNames: id
+            constraintName: fk_cart_product

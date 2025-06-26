@@ -1,0 +1,15 @@
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  padding: 16px;
+  align-items: start;
+}
+
+.product-card {
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}

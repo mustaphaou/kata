@@ -1,0 +1,75 @@
+<div class="container mt-4">
+  <h2>{{ isEditMode ? 'Modifier le produit' : 'Créer un produit' }}</h2>
+
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label class="form-label">Code</label>
+      <input type="text" class="form-control" formControlName="code" required />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Nom</label>
+      <input type="text" class="form-control" formControlName="name" required />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Description</label>
+      <textarea class="form-control" rows="3" formControlName="description"></textarea>
+    </div>
+
+    <!-- <div class="mb-3">
+      <label class="form-label">URL de l'image</label>
+      <input type="text" class="form-control" formControlName="image" />
+    </div> -->
+
+    <div class="mb-3">
+      <label class="form-label">Image</label>
+      <input type="file" (change)="onFileSelected($event)" class="form-control" />
+      <img *ngIf="productForm.value.image" [src]="productForm.value.image" alt="preview"
+        style="max-width: 200px; margin-top: 10px;" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Catégorie</label>
+      <input type="text" class="form-control" formControlName="category" required />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Prix</label>
+      <input type="number" class="form-control" formControlName="price" required />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Quantité</label>
+      <input type="number" class="form-control" formControlName="quantity" required />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Référence interne</label>
+      <input type="text" class="form-control" formControlName="internalReference" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">ID de l'étagère</label>
+      <input type="number" class="form-control" formControlName="shellId" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">État du stock</label>
+      <select class="form-select" formControlName="inventoryStatus">
+        <option value="INSTOCK">En stock</option>
+        <option value="LOWSTOCK">Stock faible</option>
+        <option value="OUTOFSTOCK">Rupture de stock</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Évaluation</label>
+      <input type="number" class="form-control" formControlName="rating" step="0.1" />
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="productForm.invalid">
+      {{ isEditMode ? 'Mettre à jour' : 'Créer' }}
+    </button>
+  </form>
+</div>
